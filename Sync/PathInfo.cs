@@ -7,6 +7,8 @@ namespace Sync
 {
     public class PathInfo
     {
+
+        public static  event EventHandler FileProcessed;
         public PathInfo(string dir, string file)
         {
             Directory = dir;
@@ -33,9 +35,11 @@ namespace Sync
                 using (var stream = System.IO.File.OpenRead(p1.FullPath))
                 {
                     var hash = md5.ComputeHash(stream);
+                      FileProcessed?.Invoke(null, EventArgs.Empty);
                     return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
                 }
             }
+           
         }
 
         public override bool Equals(object obj)

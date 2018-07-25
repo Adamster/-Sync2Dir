@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Sync
 {
@@ -20,10 +21,10 @@ namespace Sync
             FolderB = folderB;
         }
 
-        public void Sync()
+        public async Task Sync()
         {
-            folderAInfo = ParseFolder(FolderA);
-            folderBInfo = ParseFolder(FolderB);
+            folderAInfo = await ParseFolder(FolderA);
+            folderBInfo = await ParseFolder(FolderB);
 
             var intersect = folderAInfo.Intersect(folderBInfo, new FileComparer()).ToList();
 
@@ -44,8 +45,9 @@ namespace Sync
 
         }
 
-        private List<PathInfo> ParseFolder(string folderPath)
+        private Task<List<PathInfo>> ParseFolder(string folderPath)
         {
+
             Console.WriteLine($"Processing {folderPath}...");
             var isPathValid = Directory.Exists(folderPath);
             var folderInfo = new List<PathInfo>();
@@ -60,13 +62,14 @@ namespace Sync
                     foreach (var file in files)
                     {
                         var info = new PathInfo(dir, Path.GetFileName(file));
+                       
                         Console.WriteLine($"adding {info.FullPath}");
                         folderInfo.Add(info);
                     }
                 }
             }
 
-            return folderInfo;
+            return Task.FromResult(folderInfo);
 
         }
     }
