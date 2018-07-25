@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sync2Dir", "Sync2Dir\Sync2Dir.csproj", "{615EFCFC-2BB7-48A7-BC1B-F666651E2753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sync2Dir", "Sync2Dir\Sync2Dir.csproj", "{615EFCFC-2BB7-48A7-BC1B-F666651E2753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sync", "Sync\Sync.csproj", "{F44D3896-3247-44C8-98F3-2405AF81248C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{615EFCFC-2BB7-48A7-BC1B-F666651E2753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{615EFCFC-2BB7-48A7-BC1B-F666651E2753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{615EFCFC-2BB7-48A7-BC1B-F666651E2753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F44D3896-3247-44C8-98F3-2405AF81248C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44D3896-3247-44C8-98F3-2405AF81248C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44D3896-3247-44C8-98F3-2405AF81248C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44D3896-3247-44C8-98F3-2405AF81248C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
